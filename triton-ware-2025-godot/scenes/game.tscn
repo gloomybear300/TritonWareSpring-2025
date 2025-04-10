@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctxnelpw4al07"]
+[gd_scene load_steps=5 format=3 uid="uid://ctxnelpw4al07"]
 
+[ext_resource type="Script" uid="uid://cwwcwbh4f6mhl" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c7x6dpp030cyv" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://be3eswngom4pu" path="res://scripts/platformer_spawner.gd" id="2_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fmxm6"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_lnu2h")
 
 [node name="player" parent="." instance=ExtResource("1_yqjtg")]
 position = Vector2(579, 249)
@@ -23,3 +25,11 @@ script = ExtResource("2_lnu2h")
 
 [node name="point" type="Marker2D" parent="Platformer Spawner"]
 position = Vector2(1274, 340)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 43.0
+offset_right = 192.0
+offset_bottom = 66.0
+scale = Vector2(0.981273, 1)
+text = "shift escape to quit"
