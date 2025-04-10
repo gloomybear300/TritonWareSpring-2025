@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxnelpw4al07"]
+
+[ext_resource type="PackedScene" uid="uid://c7x6dpp030cyv" path="res://scenes/player.tscn" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://be3eswngom4pu" path="res://scripts/platformer_spawner.gd" id="2_lnu2h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fmxm6"]
+
+[node name="Game" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(579, 249)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(568, 644)
+shape = SubResource("WorldBoundaryShape2D_fmxm6")
+
+[node name="Platformer Spawner" type="Node" parent="."]
+script = ExtResource("2_lnu2h")
+
+[node name="point" type="Marker2D" parent="Platformer Spawner"]
+position = Vector2(1274, 340)
