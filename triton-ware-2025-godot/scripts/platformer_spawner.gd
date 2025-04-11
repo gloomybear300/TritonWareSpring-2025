@@ -1,7 +1,7 @@
 extends Node
 
 @onready var point: Marker2D = $point
-@onready var platform_scene = preload("res://platform.tscn")
+@onready var platform_scene = preload("res://scenes/platform.tscn")
 
 @onready var wait: float = 2
 var timer: float = wait

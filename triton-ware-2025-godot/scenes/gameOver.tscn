@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://oxdpjk0tmw2j"]
+
+[ext_resource type="Script" uid="uid://cvua102x1ekqu" path="res://scripts/game_over.gd" id="1_xlotp"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xlotp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gameOverText" type="Label" parent="CanvasLayer"]
+offset_left = 562.0
+offset_top = 209.0
+offset_right = 649.0
+offset_bottom = 258.0
+text = "Game Over
+"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 629.0
+offset_top = 279.0
+offset_right = 671.0
+offset_bottom = 302.0
+text = "score"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 620.0
+offset_top = 337.0
+offset_right = 668.0
+offset_bottom = 403.0
+
+[node name="retryButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "retry"
+
+[node name="mainButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "main"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/retryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/mainButton" to="." method="_on_main_button_pressed"]
