@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctxnelpw4al07"]
+[gd_scene load_steps=7 format=3 uid="uid://ctxnelpw4al07"]
 
 [ext_resource type="Script" uid="uid://cwwcwbh4f6mhl" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c7x6dpp030cyv" path="res://scenes/player.tscn" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://be3eswngom4pu" path="res://scripts/platformer_spawner.gd" id="2_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fmxm6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lnu2h")
@@ -33,3 +37,17 @@ offset_right = 192.0
 offset_bottom = 66.0
 scale = Vector2(0.981273, 1)
 text = "shift escape to quit"
+
+[node name="wall left" type="StaticBody2D" parent="."]
+position = Vector2(0, 334)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall left"]
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="wall right" type="StaticBody2D" parent="."]
+position = Vector2(1153, -2)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall right"]
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
