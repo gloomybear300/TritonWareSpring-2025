@@ -8,6 +8,7 @@ func _ready():
 
 func _process(delta):
 	if round_active:
+		$CanvasLayer/ScoreLabel.text = "Time: %.2f seconds" % score
 		round_time += delta
 		#print("Time: ", round_time)  # For debugging
 
